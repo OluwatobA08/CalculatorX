@@ -13,23 +13,20 @@ def divide(x, y):
     else:
         return "Error: Division by zero"
 
-def calculator(operation, x, y):
-    if operation == "add":
-        return add(x, y)
-    elif operation == "subtract":
-        return subtract(x, y)
-    elif operation == "multiply":
-        return multiply(x, y)
-    elif operation == "divide":
-        return divide(x, y)
-    else:
-        return "Error: Invalid operation"
-
 if __name__ == "__main__":
-    operation = input("Enter operation (add, subtract, multiply, divide): ")
     num1 = float(input("Enter first number: "))
+    operator = input("Enter operator (+, -, *, /): ")
     num2 = float(input("Enter second number: "))
 
-    result = calculator(operation, num1, num2)
+    if operator == '+':
+        result = add(num1, num2)
+    elif operator == '-':
+        result = subtract(num1, num2)
+    elif operator == '*':
+        result = multiply(num1, num2)
+    elif operator == '/':
+        result = divide(num1, num2)
+    else:
+        result = "Error: Invalid operator"
 
     print(f"Result: {result}")
