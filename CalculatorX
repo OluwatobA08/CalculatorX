@@ -1,38 +1,35 @@
-# Function to perform addition
 def add(x, y):
     return x + y
 
-# Function to perform subtraction
 def subtract(x, y):
     return x - y
 
-# Function to perform multiplication
 def multiply(x, y):
     return x * y
 
-# Function to perform division
 def divide(x, y):
     if y != 0:
         return x / y
     else:
         return "Error: Division by zero"
 
-# Take input from the user
-num1 = float(input("Enter first number: "))
-operator = input("Enter operator (+, -, *, /): ")
-num2 = float(input("Enter second number: "))
+def calculator(operation, x, y):
+    if operation == "add":
+        return add(x, y)
+    elif operation == "subtract":
+        return subtract(x, y)
+    elif operation == "multiply":
+        return multiply(x, y)
+    elif operation == "divide":
+        return divide(x, y)
+    else:
+        return "Error: Invalid operation"
 
-# Perform calculation based on the operator
-if operator == '+':
-    result = add(num1, num2)
-elif operator == '-':
-    result = subtract(num1, num2)
-elif operator == '*':
-    result = multiply(num1, num2)
-elif operator == '/':
-    result = divide(num1, num2)
-else:
-    result = "Error: Invalid operator"
+if __name__ == "__main__":
+    operation = input("Enter operation (add, subtract, multiply, divide): ")
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
 
-# Display the result
-print(f"Result: {result}")
+    result = calculator(operation, num1, num2)
+
+    print(f"Result: {result}")
