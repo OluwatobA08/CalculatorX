@@ -36,4 +36,3 @@ else:
 
 # Display the result
 print(f"Result: {result}")
-
